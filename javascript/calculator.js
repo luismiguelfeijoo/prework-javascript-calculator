@@ -2,28 +2,55 @@ class Calculator {
   constructor(screen) {
     this.previousNumber = 0;
     this.currentNumber = 0;
+    this.operation = null;
     this.screen = screen;
     this.printScreen();
   }
 
   addNums() {
-    this.previousNumber = this.screen;
-    return this.previousNumber + this.screen;
+    this.currentNumber = this.previousNumber + Number(this.currentNumber);
+    this.previousNumber = 0;
+    this.printScreen();
   }
 
   substractNums() {
-    this.previousNumber = this.screen;
-    return this.previousNumber - this.screen;
+    this.currentNumber = this.previousNumber - Number(this.currentNumber);
+    this.previousNumber = 0;
+    this.printScreen();
   }
 
   multiplyNums() {
-    this.previousNumber = this.screen;
-    return this.previousNumber * this.screen;
+    this.currentNumber = this.previousNumber * Number(this.currentNumber);
+    this.previousNumber = 0;
+    this.printScreen();
   }
 
   divideNums() {
-    this.previousNumber = this.screen;
-    return this.previousNumber / this.screen;
+    this.currentNumber = Number(
+      (this.previousNumber / Number(this.currentNumber)).toFixed(2)
+    );
+    this.previousNumber = 0;
+    this.printScreen();
+  }
+
+  setTotal() {
+    switch (this.operation) {
+      case "add":
+        this.addNums();
+        break;
+      case "substract":
+        this.substractNums();
+        break;
+      case "multiply":
+        this.multiplyNums();
+        break;
+      case "divide":
+        this.divideNums();
+        break;
+      case null:
+        console.log("No operation selected");
+        break;
+    }
   }
 
   setCurrentNumber(num) {
@@ -36,15 +63,17 @@ class Calculator {
     this.printScreen();
   }
 
-  setPreviousNumber(num) {
-    this.currentNumber = num;
+  setPreviousNumber() {
+    this.previousNumber = Number(this.currentNumber);
+    this.currentNumber = 0;
+    this.printScreen();
+  }
+
+  setOperation(operation) {
+    this.operation = operation;
   }
 
   printScreen() {
     this.screen.innerHTML = this.currentNumber;
-  }
-
-  parseString(string) {
-    Number(string);
   }
 }

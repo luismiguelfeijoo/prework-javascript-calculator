@@ -79,6 +79,13 @@
   width: 38%;
 }
 
+#decimal {
+  background-color: #efeeee;
+  width: 18%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 998;
+}
+
 #total {
   width: 38%;
   background: linear-gradient(145deg, #00a5ff, #008bdd);
