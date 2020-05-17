@@ -15,22 +15,18 @@ numbers.forEach((number) => {
 });
 
 addButton.addEventListener("click", () => {
-  calculator.setPreviousNumber();
   calculator.setOperation("add");
 });
 
 substractButton.addEventListener("click", () => {
-  calculator.setPreviousNumber();
   calculator.setOperation("substract");
 });
 
 multiplyButton.addEventListener("click", () => {
-  calculator.setPreviousNumber();
   calculator.setOperation("multiply");
 });
 
 divideButton.addEventListener("click", () => {
-  calculator.setPreviousNumber();
   calculator.setOperation("divide");
 });
 
@@ -38,4 +34,6 @@ totalButton.addEventListener("click", () => {
   calculator.setTotal();
 });
 
-decimal.addEventListener("click", (event) => {});
+decimal.addEventListener("click", (event) => {
+  calculator.makeDecimal();
+});

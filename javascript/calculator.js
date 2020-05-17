@@ -51,6 +51,7 @@ class Calculator {
         console.log("No operation selected");
         break;
     }
+    this.operation = null;
   }
 
   setCurrentNumber(num) {
@@ -70,7 +71,16 @@ class Calculator {
   }
 
   setOperation(operation) {
+    if (this.operation === null) {
+      this.setPreviousNumber();
+    }
     this.operation = operation;
+  }
+
+  makeDecimal() {
+    if (this.currentNumber - Math.floor(this.currentNumber) === 0) {
+      this.currentNumber = this.currentNumber + ".";
+    }
   }
 
   printScreen() {
