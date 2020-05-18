@@ -2,6 +2,8 @@
 
 A calculator with only JS (Experimenting with neumorphic design)
 
+Click on the picture and give it a try!
+
 <a href="https://luismiguelfeijoo.github.io/prework-javascript-calculator/index.html"><img src="https://i.imgur.com/MiuexKj.png" alt="calculator" /></a>
 
 It has the basic features:
