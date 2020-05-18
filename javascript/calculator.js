@@ -102,6 +102,16 @@ class Calculator {
     this.printScreen();
   }
 
+  delete() {
+    if (this.currentNumber !== 0) {
+      let newCurrentNumber = String(this.currentNumber);
+      this.currentNumber = Number(
+        newCurrentNumber.substring(0, newCurrentNumber.length - 1)
+      );
+      this.printScreen();
+    }
+  }
+
   printScreen() {
     this.screen.innerHTML = this.currentNumber;
   }

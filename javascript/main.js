@@ -5,6 +5,8 @@ let addButton = document.getElementById("add");
 let substractButton = document.getElementById("substract");
 let multiplyButton = document.getElementById("multiply");
 let divideButton = document.getElementById("divide");
+let clearButton = document.getElementById("clear");
+let deleteButton = document.getElementById("delete");
 let totalButton = document.getElementById("total");
 let calculator = new Calculator(display);
 
@@ -32,6 +34,10 @@ divideButton.addEventListener("click", () => {
 
 totalButton.addEventListener("click", () => {
   calculator.setTotal();
+});
+
+deleteButton.addEventListener("click", () => {
+  calculator.delete();
 });
 
 decimal.addEventListener("click", (event) => {
