@@ -55,7 +55,6 @@ class Calculator {
   }
 
   setCurrentNumber(num) {
-    console.log(this.currentNumber, typeof this.currentNumber);
     if (num !== ".") {
       num = Number(num);
     }
@@ -69,12 +68,10 @@ class Calculator {
       if (num !== ".") {
         this.currentNumber = Number(this.currentNumber + String(num));
       } else {
-        console.log("making decimal");
         this.currentNumber = this.currentNumber + ".";
       }
     }
     this.printScreen();
-    console.log(this.currentNumber, typeof this.currentNumber);
   }
 
   setPreviousNumber() {
