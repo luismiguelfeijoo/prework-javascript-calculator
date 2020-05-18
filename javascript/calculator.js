@@ -112,6 +112,13 @@ class Calculator {
     }
   }
 
+  clear() {
+    this.operation = null;
+    this.previousNumber = 0;
+    this.currentNumber = 0;
+    this.printScreen();
+  }
+
   printScreen() {
     this.screen.innerHTML = this.currentNumber;
   }

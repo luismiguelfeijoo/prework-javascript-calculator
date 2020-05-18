@@ -40,6 +40,10 @@ deleteButton.addEventListener("click", () => {
   calculator.delete();
 });
 
+clearButton.addEventListener("click", () => {
+  calculator.clear();
+});
+
 decimal.addEventListener("click", (event) => {
   calculator.makeDecimal();
 });
