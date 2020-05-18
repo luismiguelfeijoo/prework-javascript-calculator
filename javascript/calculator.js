@@ -55,13 +55,26 @@ class Calculator {
   }
 
   setCurrentNumber(num) {
-    num = Number(num);
-    if (this.currentNumber === 0) {
+    console.log(this.currentNumber, typeof this.currentNumber);
+    if (num !== ".") {
+      num = Number(num);
+    }
+    if (this.currentNumber === ".0") {
+      this.currentNumber = this.currentNumber + String(num);
+    } else if (this.currentNumber === 0) {
       this.currentNumber = num;
+    } else if (this.currentNumber === ".") {
+      this.currentNumber = this.currentNumber + String(num);
     } else {
-      this.currentNumber = Number(this.currentNumber + String(num));
+      if (num !== ".") {
+        this.currentNumber = Number(this.currentNumber + String(num));
+      } else {
+        console.log("making decimal");
+        this.currentNumber = this.currentNumber + ".";
+      }
     }
     this.printScreen();
+    console.log(this.currentNumber, typeof this.currentNumber);
   }
 
   setPreviousNumber() {
@@ -79,7 +92,9 @@ class Calculator {
 
   makeDecimal() {
     if (this.currentNumber - Math.floor(this.currentNumber) === 0) {
-      this.currentNumber = this.currentNumber + ".";
+      this.currentNumber === 0
+        ? (this.currentNumber = ".")
+        : this.setCurrentNumber(".");
     }
   }
 
