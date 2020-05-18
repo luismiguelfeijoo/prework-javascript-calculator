@@ -19,7 +19,7 @@
 }
 
 .out-shadow {
-  box-shadow: 6px 6px 6px 0px rgba(217, 210, 200, 0.51),
+  box-shadow: 6px 6px 4px 0px rgba(217, 210, 200, 0.51),
     -6px -6px 10px 0px rgba(255, 255, 255, 0.83);
   border-radius: 12px;
 }

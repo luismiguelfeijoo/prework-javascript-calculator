@@ -59,7 +59,7 @@ class Calculator {
     if (this.currentNumber === 0) {
       this.currentNumber = num;
     } else {
-      this.currentNumber = this.currentNumber + String(num);
+      this.currentNumber = Number(this.currentNumber + String(num));
     }
     this.printScreen();
   }
