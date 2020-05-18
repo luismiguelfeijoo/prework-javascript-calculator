@@ -4,6 +4,7 @@ class Calculator {
     this.currentNumber = 0;
     this.operation = null;
     this.screen = screen;
+    this.decimalRegex = /^\d*\./;
     this.printScreen();
   }
 
@@ -61,6 +62,7 @@ class Calculator {
   }
 
   setCurrentNumber(num) {
+    console.log(this.decimalRegex);
     if (num !== ".") {
       num = Number(num);
     }
@@ -68,7 +70,7 @@ class Calculator {
       this.currentNumber = this.currentNumber + String(num);
     } else if (this.currentNumber === 0) {
       this.currentNumber = num;
-    } else if (this.currentNumber === ".") {
+    } else if (this.decimalRegex.test(this.currentNumber)) {
       this.currentNumber = this.currentNumber + String(num);
     } else {
       if (num !== ".") {
@@ -95,9 +97,7 @@ class Calculator {
 
   makeDecimal() {
     if (this.currentNumber - Math.floor(this.currentNumber) === 0) {
-      this.currentNumber === 0
-        ? (this.currentNumber = ".")
-        : this.setCurrentNumber(".");
+      this.setCurrentNumber(".");
     }
     this.printScreen();
   }
