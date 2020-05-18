@@ -9,28 +9,34 @@ class Calculator {
 
   addNums() {
     this.currentNumber = this.previousNumber + Number(this.currentNumber);
+    this.roundResult(3);
     this.previousNumber = 0;
     this.printScreen();
   }
 
   substractNums() {
     this.currentNumber = this.previousNumber - Number(this.currentNumber);
+    this.roundResult(3);
     this.previousNumber = 0;
     this.printScreen();
   }
 
   multiplyNums() {
     this.currentNumber = this.previousNumber * Number(this.currentNumber);
+    this.roundResult(3);
     this.previousNumber = 0;
     this.printScreen();
   }
 
   divideNums() {
-    this.currentNumber = Number(
-      (this.previousNumber / Number(this.currentNumber)).toFixed(2)
-    );
+    this.currentNumber = this.previousNumber / Number(this.currentNumber);
+    this.roundResult(2);
     this.previousNumber = 0;
     this.printScreen();
+  }
+
+  roundResult(decimalPoint) {
+    this.currentNumber = Number(this.currentNumber.toFixed(decimalPoint));
   }
 
   setTotal() {
@@ -93,6 +99,7 @@ class Calculator {
         ? (this.currentNumber = ".")
         : this.setCurrentNumber(".");
     }
+    this.printScreen();
   }
 
   printScreen() {
