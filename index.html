@@ -10,36 +10,46 @@
   <body>
     <div class="container">
       <div id="calculator" class="out-shadow">
-        <div id="screen" class="out-shadow"></div>
+        <div id="screen" class="out-shadow">
+          <p id="display"></p>
+        </div>
         <div id="keys">
           <div class="row">
             <button class="number out-shadow">7</button>
             <button class="number out-shadow">8</button>
             <button class="number out-shadow">9</button>
-            <button class="delete out-shadow">DEL</button>
-            <button class="delete out-shadow">AC</button>
+            <button id="delete" class="delete out-shadow">DEL</button>
+            <button id="clear" class="delete out-shadow">AC</button>
           </div>
           <div class="row">
             <button class="number out-shadow">4</button>
             <button class="number out-shadow">5</button>
             <button class="number out-shadow">6</button>
-            <button class="symbol out-shadow">x</button>
-            <button class="symbol out-shadow">÷</button>
+            <button id="multiply" class="symbol out-shadow">x</button>
+            <button id="divide" class="symbol out-shadow">÷</button>
           </div>
           <div class="row">
             <button class="number out-shadow">1</button>
             <button class="number out-shadow">2</button>
             <button class="number out-shadow">3</button>
-            <button class="symbol out-shadow">+</button>
-            <button class="symbol out-shadow">-</button>
+            <button id="add" class="symbol out-shadow">+</button>
+            <button id="substract" class="symbol out-shadow">-</button>
           </div>
           <div class="row">
             <button id="cero" class="number out-shadow">0</button>
-            <button class="number out-shadow">.</button>
+            <button id="decimal" class="out-shadow">.</button>
             <button id="total" class="out-shadow">=</button>
           </div>
         </div>
       </div>
+      <div id="footer">
+        <p>
+          Develop by
+          <a href="http://www.linkedin.com/in/luismifeijoo">Luismi</a>
+        </p>
+      </div>
     </div>
+    <script src="./javascript/calculator.js"></script>
+    <script src="./javascript/main.js"></script>
   </body>
 </html>
