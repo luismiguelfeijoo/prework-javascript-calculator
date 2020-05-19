@@ -47,3 +47,23 @@ clearButton.addEventListener("click", () => {
 decimal.addEventListener("click", (event) => {
   calculator.makeDecimal();
 });
+
+document.addEventListener("keydown", (event) => {
+  if (event.keyCode === 8) {
+    calculator.delete();
+  } else if (event.keyCode > 47 && event.keyCode < 58) {
+    calculator.setCurrentNumber(event.key);
+  } else if (event.keyCode === 187) {
+    calculator.setOperation("add");
+  } else if (event.keyCode === 189) {
+    calculator.setOperation("substract");
+  } else if (event.keyCode === 221) {
+    calculator.setOperation("multiply");
+  } else if (event.keyCode === 55) {
+    calculator.setOperation("divide");
+  } else if (event.keyCode === 13) {
+    calculator.setTotal();
+  } else if (event.keyCode === 190) {
+    calculator.makeDecimal();
+  }
+});
