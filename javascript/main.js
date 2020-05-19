@@ -55,7 +55,6 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "/") {
       calculator.setOperation("divide");
     } else if (!event.shiftKey) {
-      console.log(event);
       calculator.setCurrentNumber(event.key);
     }
   } else if (event.keyCode === 187) {
