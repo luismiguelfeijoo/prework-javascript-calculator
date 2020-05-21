@@ -62,7 +62,6 @@ class Calculator {
   }
 
   setCurrentNumber(num) {
-    console.log(this.decimalRegex);
     if (num !== ".") {
       num = Number(num);
     }
