@@ -30,10 +30,14 @@ class Calculator {
   }
 
   divideNums() {
-    this.currentNumber = this.previousNumber / Number(this.currentNumber);
-    this.roundResult(2);
-    this.previousNumber = 0;
-    this.printScreen();
+    if (this.currentNumber == 0) {
+      this.screen.innerHTML = "Error!";
+    } else {
+      this.currentNumber = this.previousNumber / Number(this.currentNumber);
+      this.roundResult(2);
+      this.previousNumber = 0;
+      this.printScreen();
+    }
   }
 
   roundResult(decimalPoint) {
